@@ -9,18 +9,20 @@ networks is used alongwith a simple standard deviation serving as an input
 to predict the stock prices.
 
 
-Execution
----------
-
-python Dataprocess.py
-python marketsim.py
-python analyze.py GOOG
-
-
 Required Libraries
 ------------------
 
-QSTK
-numpy
-pandas
-matplotlib
+QSTK  
+numpy  
+pandas  
+matplotlib  
+
+
+Execution
+---------
+
+python Dataprocess.py  
+python marketsim.py  
+python analyze.py GOOG  
+
+
