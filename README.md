@@ -21,7 +21,7 @@ matplotlib
 Execution
 ---------
 
-python Dataprocess.py  
+python Dataprocess1.py  or python Dataprocess.py
 python marketsim.py  
 python analyze.py GOOG  
 
