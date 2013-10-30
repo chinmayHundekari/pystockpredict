@@ -134,7 +134,7 @@ def getData(startDate, endDate, symbols, cache=1):
     symbols.append('SPY')
     ls_keys = ['open', 'high', 'low', 'close', 'volume', 'actual_close']
     print "Obtaining data"
-    ldf_data = dataobj.get_data(ldt_timestamps, ls_symbols, ls_keys)
+    ldf_data = dataobj.get_data(ldt_timestamps, symbols, ls_keys)
     d_data = dict(zip(ls_keys, ldf_data))
     for s_key in ls_keys:
         d_data[s_key] = d_data[s_key].fillna(method = 'ffill')

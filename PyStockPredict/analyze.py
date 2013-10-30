@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 
 
 def main(argv)	:
-	symbolList = [argv[1]]
 	reader = csv.reader(open("../data/values.csv", 'rU'), delimiter=',')
 	dates = []
 	fundvalue = [0]
@@ -32,7 +31,7 @@ def main(argv)	:
 	ldt_timestamps = du.getNYSEdays(startdate, enddate, dt_timeofday)
 	c_dataobj = da.DataAccess('Yahoo', cachestalltime=0)
 	ls_keys = ['close']
-	ldf_data = c_dataobj.get_data(ldt_timestamps, symbolList, ls_keys)
+	ldf_data = c_dataobj.get_data(ldt_timestamps, [argv[1]], ls_keys)
 	d_data = dict(zip(ls_keys, ldf_data))
 	print "Calculating Portfolio Values..."
 	na_price = d_data['close'].values
@@ -46,7 +45,7 @@ def main(argv)	:
 	print 
 	print 	
 	print "***************************************************************"
-	print argv[2]
+	print argv[1]
 	print "Daily Return         :    " + str(na_dailyret)
 	print "Standard Deviation   :    " + str(na_stdev)
 	print "Sharpe               :    " + str(na_sharpe)

@@ -194,7 +194,7 @@ def bpTrain():
     y = data['y'].reshape(-1).astype(int)
     L = np.array(([X.shape[1],5,5,np.max(y)+1]))
     w = cont.NN(X,y,L)
-    j = trainBp(w,1,100)
+    j = trainBp(w,1,200)
     t = w.getTheta()
     sio.savemat('../data/bollinger_weights.mat',{'t':t,'L':L})
 
